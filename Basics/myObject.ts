@@ -1,4 +1,5 @@
 const userObject = {
+    _id: "123",
 	name: "John",
 	age: 30,
 	email: "john@hotmail.com",
@@ -49,9 +50,11 @@ createUser(userObject);
 // AKA type alias
 
 type User = {
+    readonly _id: string; // readonly property: cannot be changed (immutable)
     name: string;
     age: number;
     email: string;
+    creditCard?: number; // optional property (can be undefined)
 }
 
 const createUserSimplified = (user: User): User => {

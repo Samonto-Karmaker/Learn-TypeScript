@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var userObject = {
+    _id: "123",
     name: "John",
     age: 30,
     email: "john@hotmail.com",
-    password: "123456"
+    //password: "123456"
 };
 /*
     This is how you can create a function that takes an object as an argument
