@@ -33,8 +33,26 @@ class Person {
     public printPerson(): void {
         console.log(this.buildPerson());
     }
-    private buildPerson(): string {
+    protected buildPerson(): string {
         return `Name: ${this.name}, Age: ${this.age}, ID: ${this.id}`;
+    }
+}
+
+class Student extends Person {
+    constructor(name: string, age: number, public readonly id: number, private grade: number) {
+        super(name, age, id);
+    }
+
+    get getGrade(): number {
+        return this.grade;
+    }
+    set setGrade(grade: number) {
+        grade <= 4 ? this.grade = grade : console.log('Grade should be between 0 and 4');
+    }
+
+    public printStudent(): void {
+        console.log(this.buildPerson());
+        console.log(`Grade: ${this.grade}`);
     }
 }
 
@@ -45,3 +63,12 @@ console.log(person.id);
 person.printPerson();
 person.setName = 'Jane';
 console.log(person.getName);
+
+let student = new Student('Alice', 20, 2, 3);
+console.log(student);
+console.log(student.id);
+
+student.printStudent();
+student.setGrade = 3.5;
+student.setName = 'Bob';
+student.printStudent();

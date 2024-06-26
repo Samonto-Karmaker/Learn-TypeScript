@@ -38,9 +38,33 @@ class Person {
         return `Name: ${this.name}, Age: ${this.age}, ID: ${this.id}`;
     }
 }
+class Student extends Person {
+    constructor(name, age, id, grade) {
+        super(name, age, id);
+        this.id = id;
+        this.grade = grade;
+    }
+    get getGrade() {
+        return this.grade;
+    }
+    set setGrade(grade) {
+        grade <= 4 ? this.grade = grade : console.log('Grade should be between 0 and 4');
+    }
+    printStudent() {
+        console.log(this.buildPerson());
+        console.log(`Grade: ${this.grade}`);
+    }
+}
 let person = new Person('John', 30, 1);
 console.log(person);
 console.log(person.id);
 person.printPerson();
 person.setName = 'Jane';
 console.log(person.getName);
+let student = new Student('Alice', 20, 2, 3);
+console.log(student);
+console.log(student.id);
+student.printStudent();
+student.setGrade = 3.5;
+student.setName = 'Bob';
+student.printStudent();
