@@ -23,18 +23,12 @@ class Person {
     get getAge() {
         return this.age;
     }
-    get getId() {
-        return this.id;
-    }
     // setters: there should not be any return type for setters; not even void
     set setName(name) {
         this.name = name;
     }
     set setAge(age) {
         this.age = age;
-    }
-    set setId(id) {
-        this.id = id;
     }
     // methods
     printPerson() {

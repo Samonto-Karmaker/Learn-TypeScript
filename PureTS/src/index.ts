@@ -11,7 +11,7 @@
 // }
 
 class Person {
-    constructor(private name: string, private age: number, public id: number) {}
+    constructor(private name: string, private age: number, public readonly id: number) {}
 
     // getters
     get getName(): string {
@@ -20,9 +20,6 @@ class Person {
     get getAge(): number {
         return this.age;
     }
-    get getId(): number {
-        return this.id;
-    }
 
     // setters: there should not be any return type for setters; not even void
     set setName(name: string) {
@@ -30,9 +27,6 @@ class Person {
     }
     set setAge(age: number) {
         this.age = age;
-    }
-    set setId(id: number) {
-        this.id = id;
     }
 
     // methods
