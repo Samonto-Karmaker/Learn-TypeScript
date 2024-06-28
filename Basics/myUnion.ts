@@ -38,6 +38,8 @@ person = {
     role: "Admin",
 }
 
+// This uses Type Narrowing using typeof
+// For details, refer to Basics/myInterface.ts
 const getDB = (id : string | number): (string | number) => {
     // Here id can be either a string or a number, 
     // so we can't directly use string or number methods on it
